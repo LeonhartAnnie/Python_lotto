@@ -1,8 +1,10 @@
 import csv
 import os
 import random
-from collections import Counter
-import heapq
+import pandas as pd #python -m pip install pandas
+import matplotlib.pyplot as plt
+#from collections import defaultdict
+#import heapq
 data_path = os.path.join(os.path.expanduser("~"),"Downloads","data","data.csv")
 
 lotto_nums = []
@@ -18,9 +20,30 @@ for i in range(0,7):
     b=random.randint(0,len(lotto_nums)-1)
     a.append(lotto_nums[b])
     for num in lotto_nums:
-        if num==a:
+        if num==lotto_nums[b]:
             lotto_nums.remove(num)
             break
 a.sort()
-print(a)
-print(lotto_nums)
+print(f"選到的7個號碼為: {a}")
+
+""" for from collections import defaultdict
+
+count_dict  = defaultdict(int)
+for num in lotto_nums:
+    count_dict[num] += 1
+print(dict(count_dict))
+"""
+lotto_number_times = pd.Series(lotto_nums).value_counts()
+lotto_number_times = lotto_number_times.sort_index()
+for num, count in lotto_number_times.items():
+    print(f"{num} 出現次數: {count}次")
+
+lotto_number_times.plot(kind='bar', color='lightcoral')
+
+# 標題與標籤
+plt.xlabel("number name")
+plt.ylabel("number times")
+plt.title("number frequency analyze")
+
+plt.show()
+
