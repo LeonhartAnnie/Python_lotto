@@ -14,7 +14,6 @@ with open(data_path,newline='',encoding="utf-8") as csvfile:
     for row in reader:
         for num in row:
             lotto_nums.append(int(num))
-lotto_nums.sort()
 a=[]
 for i in range(0,7):
     b=random.randint(0,len(lotto_nums)-1)
@@ -37,13 +36,8 @@ lotto_number_times = pd.Series(lotto_nums).value_counts()
 lotto_number_times = lotto_number_times.sort_index()
 for num, count in lotto_number_times.items():
     print(f"{num} 出現次數: {count}次")
-
-lotto_number_times.plot(kind='bar', color='lightcoral')
-
-# 標題與標籤
-plt.xlabel("number name")
-plt.ylabel("number times")
-plt.title("number frequency analyze")
-
+plt.barh(lotto_number_times.index, lotto_number_times.values, align='center')
+plt.xlabel("times")
+plt.ylabel("number")
 plt.show()
 
