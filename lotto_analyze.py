@@ -1,7 +1,7 @@
 import csv
 import os
 import random
-import pandas as pd #python -m pip install pandas
+import pandas as pd
 import matplotlib.pyplot as plt
 
 def input_data():
@@ -15,6 +15,7 @@ def input_data():
             for num in row:
                 lotto_nums.append(int(num))
     return lotto_nums
+
 def pull_weighted_unique_nums(lotto_nums, count=2):
     unique_selected = set()  # 存放不重複的選取數字
     while len(unique_selected) < count:
@@ -33,8 +34,11 @@ def plot(lotto_nums):
     plt.bar(lotto_number_times.index, lotto_number_times.values, align='center')
     plt.title("lotto number analysis")
     plt.xlabel("number")
-    plt.ylabel("times")
+    plt.xlim(0.3,49.7)
+    plt.text(-4.5,24,"times") #Y軸座標
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.show()
+
 def main():
     lotto_nums = input_data()
     print(f"選到的6個號碼為: {pull_weighted_unique_nums(lotto_nums,6)}")
