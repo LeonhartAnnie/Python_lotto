@@ -15,17 +15,18 @@ def input_data():
             for num in row:
                 lotto_nums.append(int(num))
     return lotto_nums
-def pull_nums(lotto_nums):
-    a = []
-    for i in range(0, 6):
-        b = random.randint(0, len(lotto_nums) - 1)
-        a.append(lotto_nums[b])
-        for num in lotto_nums:
-            if num == lotto_nums[b]:
-                lotto_nums.remove(num)
-                break
-    a.sort()
-    return a
+import random
+
+def pull_weighted_unique_nums(lotto_nums, count=2):
+    unique_selected = set()  # 存放不重複的選取數字
+    while len(unique_selected) < count:
+        chosen = random.choices(lotto_nums)[0]  # 根據比重選取數字
+        unique_selected.add(chosen)  # 添加到 set 中（確保唯一）
+
+        if len(unique_selected) == len(set(lotto_nums)):  # 若已選完所有不同數字
+            break
+
+    return sorted(unique_selected)  # 排序後回傳
 def plot(lotto_nums):
     lotto_number_times = pd.Series(lotto_nums).value_counts()
     lotto_number_times = lotto_number_times.sort_index()
@@ -38,7 +39,7 @@ def plot(lotto_nums):
     plt.show()
 def main():
     lotto_nums = input_data()
-    print(f"選到的6個號碼為: {pull_nums(lotto_nums)}")
+    print(f"選到的6個號碼為: {pull_weighted_unique_nums(lotto_nums,6)}")
     plot(lotto_nums)
 
 if __name__ == "__main__":

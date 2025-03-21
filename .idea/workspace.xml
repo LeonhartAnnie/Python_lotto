@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98777844-76f2-4f67-adf9-4984668a3822" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lotto_analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/lotto_analyze.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +64,7 @@
       <updated>1741918558274</updated>
       <workItem from="1741918559468" duration="644000" />
       <workItem from="1741919992271" duration="365000" />
-      <workItem from="1742520999377" duration="1665000" />
+      <workItem from="1742520999377" duration="2787000" />
     </task>
     <servers />
   </component>
@@ -72,6 +73,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Python_lotto$lotto_fetch.coverage" NAME="lotto_fetch Coverage Results" MODIFIED="1741919186556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Python_lotto$lotto_analyze.coverage" NAME="lotto_analyze Coverage Results" MODIFIED="1742522613597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_lotto$lotto_analyze.coverage" NAME="lotto_analyze Coverage Results" MODIFIED="1742523786556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
