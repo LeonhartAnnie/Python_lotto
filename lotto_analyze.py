@@ -15,8 +15,6 @@ def input_data():
             for num in row:
                 lotto_nums.append(int(num))
     return lotto_nums
-import random
-
 def pull_weighted_unique_nums(lotto_nums, count=2):
     unique_selected = set()  # 存放不重複的選取數字
     while len(unique_selected) < count:
