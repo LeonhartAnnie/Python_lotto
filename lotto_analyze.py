@@ -5,12 +5,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def input_data():
-    data_path = os.path.join(os.path.expanduser("~"), "Downloads", "data", "data.csv")
+    data_path = os.path.join(os.path.expanduser("~"), "Downloads", "data", "data.csv") # 設定讀取位置
 
     lotto_nums = []
-    with open(data_path, newline='', encoding="utf-8") as csvfile:
+    with open(data_path, newline='', encoding="utf-8") as csvfile: #開檔
         reader = csv.reader(csvfile)
-        next(reader)
+        next(reader) #掉過第一行
         for row in reader:
             for num in row:
                 lotto_nums.append(int(num))
@@ -27,7 +27,7 @@ def pull_weighted_unique_nums(lotto_nums, count=2):
 
     return sorted(unique_selected)  # 排序後回傳
 def plot(lotto_nums):
-    lotto_number_times = pd.Series(lotto_nums).value_counts()
+    lotto_number_times = pd.Series(lotto_nums).value_counts() # 計數
     lotto_number_times = lotto_number_times.sort_index()
     for num, count in lotto_number_times.items():
         print(f"{num} 出現次數: {count}次")
