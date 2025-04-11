@@ -1,7 +1,6 @@
-import project2
-
-nodes=project2.nodes
-edges=project2.edges
+from project2 import nodes
+from project2 import edges
+import Dijkstra_algorithm
 
 # 讀取節點資料 
 with open("node.txt", "r") as f: 
@@ -10,8 +9,7 @@ with open("node.txt", "r") as f:
         # parts[0] = n1, parts[1] = (541, 503) 
         coords = eval(parts[1].strip())	 	# 將座標字串轉為 tuple 
         nodes.append(coords) 
-for node in nodes:
-    print(node)
+
 
 # 讀取邊資料 
 with open("edge.txt", "r") as f: 
@@ -24,5 +22,7 @@ with open("edge.txt", "r") as f:
         edge = tuple(sorted((node1, node2))) 	# 保證邊無向性 
         edges.add(edge) 
 
-for edge in edges:
-    print(edge)
+graph = Dijkstra_algorithm.build_graph(edges)
+dist, path = Dijkstra_algorithm.dijkstra(graph, start=0, end=2)
+print("最短距離：", dist)
+print("路徑：", path)
