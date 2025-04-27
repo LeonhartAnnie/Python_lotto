@@ -1,5 +1,4 @@
 import random 
-import matplotlib.pyplot as plt 
 import numpy as np 
 from scipy.spatial import Delaunay 
 import math 
@@ -36,28 +35,3 @@ with open("node.txt", "w") as node_file:
 with open("edge.txt", "w") as edge_file: 
     for i, (dist, node1, node2) in enumerate(edges): 
         edge_file.write(f"e{i}.({dist},n{node1},n{node2})\n")
-
-plt.figure(figsize=(8, 8))
-
-# 繪製節點
-x_coords = [node[0] for node in nodes]     # 取出所有 x 坐標
-y_coords = [node[1] for node in nodes]     # 取出所有 y 坐標
-plt.scatter(x_coords, y_coords, c='blue')
-
-for i, (x, y) in enumerate(nodes):
-    plt.text(x + 5, y + 5, f'n{i}', fontsize=8, color='red')
-    
-# 繪製邊
-for edge in edges:
-  dist, node1, node2 = edge
-  x_values = [nodes[node1][0], nodes[node2][0]]
-  y_values = [nodes[node1][1], nodes[node2][1]]
-  plt.plot(x_values, y_values, c='gray', alpha=0.5)
-
-# 繪製
-plt.title("Graph Visualization")
-plt.xlabel("X Coordinate")
-plt.ylabel("Y Coordinate")
-plt.grid(True)
-plt.show()
-
