@@ -1,4 +1,3 @@
-#import matplotlib.pyplot as plt 劃出最短距離
 import Dijkstra_algorithm
 
 # 讀取邊資料 

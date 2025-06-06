@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt 
-from matplotlib.lines import Line2D  # 創建一個虛擬的圖形，並將它添加到圖例中
 from generate_node import nodes, edges  # 產生整個圖
 from catch_short_distance import path
 from find_center_distance import center, radius, nodes_in_range
